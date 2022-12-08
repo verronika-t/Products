@@ -1,0 +1,172 @@
+.wrapper {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1;
+}
+
+.firstRow, .secondRow {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.product-btn {
+    background-color: rgb(67,116,145);
+    width: 15.5vw;
+    height: 11.75vw;
+    border: none;
+    border-radius: 0.48vw;
+    cursor: pointer;
+}
+
+h3 {
+    margin-top: 0.55vw;
+    margin-bottom: 1.35vw;
+    font-family: 'Montserrat';
+    font-size: 1.25vw;
+}
+
+.products{
+    text-align: center;   
+    margin-left: 3.1248vw;
+    margin-right: 3.1248vw;
+}
+
+/* MODAL */
+
+#modal-left {
+    width: 50%;
+    float: left;
+    background-color: rgb(42, 86, 119)
+}
+
+#modal-right {
+    width: 50%;
+    float: left;
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 50vw;
+    height: 37vw;
+    z-index: 3;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#title-and-close {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#title {
+    font-family: 'Montserrat';
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    margin: 0.7vw 0.1vw 0;
+    color: rgb(59, 59, 59);
+}
+
+#close-btn {
+    font-family: system-ui;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.5vw;
+    color: grey;
+    margin: 0.1vw 0.4vw;
+}
+
+#rating-and-sku {
+    display: flex;
+}
+
+#rating {
+    display: flex;
+    margin: 0.1vw 1.2vw 1vw 1vw;
+    font-size: 1.5vw;
+}
+
+.star {
+    margin: 0.1vw;
+    color: rgb(207, 205, 200);
+}
+
+.star.on {
+    margin: 0.1vw;
+    color: rgb(241, 195, 77)
+}
+
+
+#sku {
+    font-family: 'Montserrat';
+    font-size: 1vw;
+    margin-top: 0.7vw;
+    color: rgb(85, 85, 85)
+}
+
+
+#about {
+    margin-left: 1.1vw;
+    font-family: 'Montserrat';
+    color: rgb(85, 85, 85);
+}
+
+
+#about > h2 {
+    font-weight: bolder;
+    margin-bottom: 0.1vw;
+    font-size: 1.6vw;
+    color: rgb(59, 59, 59);
+}
+
+#about > p {
+    margin-top: 0.2vw;
+    font-size: 1.2vw;
+}
+
+#buy-btn {
+    width: 90%;
+    margin-top: 6vw;
+    margin-left: 1vw;
+    border: 0.2vw solid rgb(42, 85, 119);
+    border-radius: 0.8vw;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-size: 1.7vw;
+    padding: 0.5vw;
+    font-weight: bolder;
+    color: rgb(42, 85, 119);
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
