@@ -1,8 +1,12 @@
-.wrapper {
+#wrapper {
    position: absolute;
+   width: 65%;
+   display: flex;
+   flex-wrap: wrap;
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
+   text-align: center;
    z-index: 1;
 }
 
@@ -31,8 +35,7 @@ h3 {
 
 .products{
     text-align: center;   
-    margin-left: 3.1248vw;
-    margin-right: 3.1248vw;
+    flex: 0 0 33.333333%;
 }
 
 /* MODAL */
@@ -88,7 +91,7 @@ h3 {
     background: none;
     font-size: 1.5vw;
     color: grey;
-    margin: 0.1vw 0.4vw;
+    margin: 0.4vw 0.4vw 1.4vw;
 }
 
 #rating-and-sku {
@@ -122,6 +125,7 @@ h3 {
 
 #about {
     margin-left: 1.1vw;
+    margin-right: 1.1vw;
     font-family: 'Montserrat';
     color: rgb(85, 85, 85);
 }
@@ -136,13 +140,13 @@ h3 {
 
 #about > p {
     margin-top: 0.2vw;
-    font-size: 1.2vw;
+    font-size: 1.1vw;
 }
 
 #buy-btn {
     width: 90%;
-    margin-top: 6vw;
-    margin-left: 1vw;
+    margin-top: 7vw;
+    margin-left: 1.3vw;
     border: 0.2vw solid rgb(42, 85, 119);
     border-radius: 0.8vw;
     background-color: white;

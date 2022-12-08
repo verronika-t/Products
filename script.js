@@ -1,5 +1,7 @@
 const lorem = ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.';
+const stockKeepingUnit = 'SKU: ';
 
+const wrapper = document.getElementById('wrapper');
 const productButtons = document.getElementsByClassName('product-btn');
 const closeProductBtn = document.getElementById('close-btn');
 const buyButton = document.getElementById('buy-btn');
@@ -61,18 +63,40 @@ const ratingModal = document.getElementById('rating');
 const skuModal = document.getElementById('sku');
 const textModal = document.getElementById('text');
 
+const addProducts = (productList) => {
+
+    for (let product of productList) {
+       let div = document.createElement('div');
+        div.className = 'products';
+        div.id = 'product-' + product.id;
+
+        let button = document.createElement('button');
+        button.className = 'product-btn';
+        button.value = product.id;
+
+        let h3 = document.createElement('h3');
+        h3.innerText = product.name;
+
+        div.appendChild(button);
+        div.appendChild(h3);
+        wrapper.appendChild(div);
+    }
+};
+
+addProducts(products);
+
 
 const showModal = (value) =>  {
-if (modal == null) return;
-modal.classList.add('active');
-overlay.classList.add('active');
+    if (modal == null) return;
+    modal.classList.add('active');
+    overlay.classList.add('active');
 
-let product = products.find(p => p.id == value);
+    let product = products.find(p => p.id == value);
 
-titleModal.innerText = product.name;
-addStarRating(product.rating);
-skuModal.innerText = 'SKU: ' + product.sku;
-textModal.innerHTML = product.about;
+    titleModal.innerText = product.name;
+    addStarRating(product.rating);
+    skuModal.innerText = stockKeepingUnit + product.sku;
+    textModal.innerHTML = product.about;
 }
 
 const addStarRating = (count) =>  {
@@ -101,6 +125,7 @@ for (let button of productButtons) {
     } )
 }
 
-
 closeProductBtn.onclick = closeModal;
 buyButton.onclick = closeModal;
+
+
